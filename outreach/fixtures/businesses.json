@@ -1,0 +1,88 @@
+{
+  "dentist": {
+    "phoenix,az": [
+      {
+        "external_id": "fx-dentist-phx-001",
+        "name": "Sunrise Family Dental",
+        "address": "4820 N 19th Ave, Suite 12, Phoenix, AZ 85015",
+        "city": "Phoenix", "state": "AZ", "postal_code": "85015", "country": "US",
+        "website_url": "{FIXTURE_BASE}/sunrise-family-dental/",
+        "phone": "(602) 555-0134",
+        "business_status": "OPERATIONAL"
+      },
+      {
+        "external_id": "fx-dentist-phx-002",
+        "name": "Cactus Modern Dental",
+        "address": "1120 E Camelback Rd, Suite 210, Phoenix, AZ 85014",
+        "city": "Phoenix", "state": "AZ", "postal_code": "85014", "country": "US",
+        "website_url": "{FIXTURE_BASE}/cactus-modern-dental/",
+        "phone": "(602) 555-0188",
+        "business_status": "OPERATIONAL"
+      },
+      {
+        "external_id": "fx-dentist-phx-003",
+        "name": "Broken Smiles Dental Group",
+        "address": "9075 W Thomas Rd, Phoenix, AZ 85037",
+        "city": "Phoenix", "state": "AZ", "postal_code": "85037", "country": "US",
+        "website_url": "{FIXTURE_BASE}/broken-smiles-dental/",
+        "phone": "(623) 555-0142",
+        "business_status": "OPERATIONAL"
+      },
+      {
+        "external_id": "fx-dentist-phx-004",
+        "name": "Desert Ridge Dental Care",
+        "address": "21000 N Tatum Blvd, Suite 140, Phoenix, AZ 85050",
+        "city": "Phoenix", "state": "AZ", "postal_code": "85050", "country": "US",
+        "website_url": "{FIXTURE_BASE}/desert-ridge-dental/",
+        "phone": "(602) 555-0177",
+        "business_status": "OPERATIONAL"
+      },
+      {
+        "external_id": "fx-dentist-phx-005",
+        "name": "Whitetooth Dental Studio",
+        "address": "1450 W Indian School Rd, Phoenix, AZ 85015",
+        "city": "Phoenix", "state": "AZ", "postal_code": "85015", "country": "US",
+        "website_url": "{FIXTURE_BASE}/whitetooth-dental-injection/",
+        "phone": "(602) 555-0199",
+        "business_status": "OPERATIONAL"
+      },
+      {
+        "external_id": "fx-dentist-phx-006",
+        "name": "Valley View Dental Arts",
+        "address": "3390 E Bell Rd, Suite 4, Phoenix, AZ 85032",
+        "city": "Phoenix", "state": "AZ", "postal_code": "85032", "country": "US",
+        "website_url": "{FIXTURE_BASE}/valley-view-dental-arts/",
+        "phone": "(602) 555-0155",
+        "business_status": "OPERATIONAL"
+      },
+      {
+        "external_id": "fx-dentist-phx-007",
+        "name": "Sunrise Family Dental of North Phoenix",
+        "address": "4820 N 19th Avenue #12, Phoenix, AZ 85015",
+        "city": "Phoenix", "state": "AZ", "postal_code": "85015", "country": "US",
+        "website_url": "{FIXTURE_BASE}/sunrise-family-dental/index.html",
+        "phone": "602-555-0134",
+        "business_status": "OPERATIONAL",
+        "_note": "Duplicate of 001 under a different listing name - exercises domain dedupe."
+      },
+      {
+        "external_id": "fx-dentist-phx-008",
+        "name": "Papago Park Dental (No Website)",
+        "address": "620 N Priest Dr, Phoenix, AZ 85281",
+        "city": "Phoenix", "state": "AZ", "postal_code": "85281", "country": "US",
+        "website_url": null,
+        "phone": "(480) 555-0121",
+        "business_status": "OPERATIONAL"
+      },
+      {
+        "external_id": "fx-dentist-phx-009",
+        "name": "Camelback Closed Dental",
+        "address": "2000 E Camelback Rd, Phoenix, AZ 85016",
+        "city": "Phoenix", "state": "AZ", "postal_code": "85016", "country": "US",
+        "website_url": "{FIXTURE_BASE}/permanently-closed-dental/",
+        "phone": "(602) 555-0164",
+        "business_status": "CLOSED_PERMANENTLY"
+      }
+    ]
+  }
+}

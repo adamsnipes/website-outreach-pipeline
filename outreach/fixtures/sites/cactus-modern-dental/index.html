@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cactus Modern Dental — Family &amp; Cosmetic Dentistry in Phoenix, AZ</title>
+<meta name="description" content="Cactus Modern Dental provides family, cosmetic and implant dentistry in central Phoenix. Same-week appointments, evening hours, online booking.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+:root{--ink:#12241f;--muted:#4d6660;--brand:#0f766e;--brand-dark:#0b544e;--sand:#f6f4ef;--line:#dfe5e2}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:#fff}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--brand-dark)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;background:rgba(255,255,255,.95);border-bottom:1px solid var(--line);z-index:10}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;flex-wrap:wrap}
+.brand{font-weight:700;font-size:1.15rem;letter-spacing:-.01em}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--muted);font-size:.95rem}
+.btn{display:inline-block;background:var(--brand);color:#fff;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:600;min-height:44px;line-height:20px}
+.btn.ghost{background:transparent;color:var(--brand-dark);border:1px solid var(--brand)}
+.hero{padding:64px 0;background:linear-gradient(180deg,var(--sand),#fff)}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin:0 0 16px;letter-spacing:-.02em}
+.hero p{font-size:1.1rem;color:var(--muted);max-width:52ch}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+section{padding:56px 0;border-top:1px solid var(--line)}
+.card{border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff}
+h2{font-size:1.6rem;letter-spacing:-.01em}
+form{display:grid;gap:12px;max-width:460px}
+label{font-weight:600;font-size:.9rem}
+input,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;font:inherit;min-height:44px}
+footer{background:#0d1f1b;color:#cfe0dc;padding:36px 0;font-size:.92rem}
+footer a{color:#8fd6cb}
+@media(max-width:640px){.hero{padding:40px 0}nav ul{gap:12px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <div class="brand">Cactus Modern Dental</div>
+    <nav><ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#team">Our Team</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <a class="btn" href="tel:+16025550188">Call (602) 555-0188</a>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Modern dentistry in central Phoenix</h1>
+      <p>Same-week appointments, transparent pricing, and a team that explains every option before you commit.
+         Family, cosmetic and implant dentistry a few minutes from downtown.</p>
+      <div class="cta-row">
+        <a class="btn" href="contact.html">Book an appointment</a>
+        <a class="btn ghost" href="tel:+16025550188">Call (602) 555-0188</a>
+      </div>
+    </div>
+  </section>
+  <section id="services">
+    <div class="wrap">
+      <h2>What we do</h2>
+      <div class="grid">
+        <div class="card"><h3>Preventive care</h3><p>Cleanings, exams, digital x-rays and sealants for the whole family.</p></div>
+        <div class="card"><h3>Cosmetic dentistry</h3><p>Veneers, bonding and whitening planned around your natural smile.</p></div>
+        <div class="card"><h3>Implants &amp; restorations</h3><p>Single implants, crowns, bridges and full-arch restorations.</p></div>
+        <div class="card"><h3>Emergency visits</h3><p>Same-day slots reserved every weekday for urgent dental pain.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="team">
+    <div class="wrap">
+      <h2>Meet the team</h2>
+      <div class="grid">
+        <div class="card"><h3>Dr. Priya Raman, DMD</h3><p>General and cosmetic dentistry. Practising in Phoenix since 2012.</p></div>
+        <div class="card"><h3>Dr. Andre Whitfield, DDS</h3><p>Implants and restorative dentistry.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="wrap">
+      <h2>Request an appointment</h2>
+      <form action="contact.html" method="post">
+        <div><label for="n">Name</label><input id="n" name="name" required></div>
+        <div><label for="e">Email</label><input id="e" type="email" name="email" required></div>
+        <div><label for="m">How can we help?</label><textarea id="m" name="message" rows="4"></textarea></div>
+        <button class="btn" type="submit">Send request</button>
+      </form>
+      <p style="margin-top:20px">Or email <a href="mailto:hello@cactusmoderndental.example">hello@cactusmoderndental.example</a></p>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <p><strong>Cactus Modern Dental</strong><br>1120 E Camelback Rd, Suite 210, Phoenix, AZ 85014</p>
+    <p>Mon–Thu 8:00–18:00 · Fri 8:00–14:00 · <a href="tel:+16025550188">(602) 555-0188</a> ·
+       <a href="mailto:hello@cactusmoderndental.example">hello@cactusmoderndental.example</a></p>
+  </div>
+</footer>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Dentist","name":"Cactus Modern Dental",
+"telephone":"+1-602-555-0188","email":"hello@cactusmoderndental.example",
+"address":{"@type":"PostalAddress","streetAddress":"1120 E Camelback Rd, Suite 210","addressLocality":"Phoenix","addressRegion":"AZ","postalCode":"85014","addressCountry":"US"},
+"openingHours":["Mo-Th 08:00-18:00","Fr 08:00-14:00"]}
+</script>
+</body>
+</html>

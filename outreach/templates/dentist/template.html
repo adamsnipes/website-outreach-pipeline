@@ -1,0 +1,290 @@
+{#-
+  StoopCraft dentist template v1.
+  Rendered deterministically from a validated SiteContent payload.
+  Every section is conditional: if there is no factual data behind it, the
+  section is not emitted at all. There are no placeholders anywhere.
+-#}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>{{ meta_title }}</title>
+{%- if meta_description %}
+<meta name="description" content="{{ meta_description }}">
+{%- endif %}
+<meta name="generator" content="StoopCraft {{ template_name }} template {{ template_version }}">
+<meta name="theme-color" content="#0e4f47">
+<meta property="og:title" content="{{ meta_title }}">
+{%- if meta_description %}
+<meta property="og:description" content="{{ meta_description }}">
+{%- endif %}
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="styles.css">
+{%- if favicon %}
+<link rel="icon" href="{{ favicon }}">
+{%- endif %}
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header" id="top">
+  <div class="shell header-inner">
+    <a class="brand" href="#top">
+      {%- if logo %}
+      <img class="brand__logo" src="{{ logo }}" alt="{{ business.name }}" width="180" height="48">
+      {%- else %}
+      <span class="brand__mark" aria-hidden="true">{{ monogram }}</span>
+      <span class="brand__name">{{ business.name }}</span>
+      {%- endif %}
+    </a>
+
+    {%- if nav_items %}
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        {%- for item in nav_items %}
+        <li><a href="#{{ item.id }}">{{ item.label }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    {%- endif %}
+
+    {%- if business.phone_href %}
+    <a class="btn btn--primary header-cta" href="{{ business.phone_href }}">
+      <span aria-hidden="true" class="btn__icon">&#9742;</span>{{ business.phone_display }}
+    </a>
+    {%- elif business.email %}
+    <a class="btn btn--primary header-cta" href="mailto:{{ business.email }}">Email the practice</a>
+    {%- endif %}
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero{% if not hero_image %} hero--no-photo{% endif %}">
+    <div class="shell hero__inner">
+      <div class="hero__copy">
+        {%- if business.locality %}
+        <p class="eyebrow">{{ business.locality }}</p>
+        {%- endif %}
+        <h1>{{ hero.headline }}</h1>
+        {%- if hero.subheadline %}
+        <p class="hero__sub">{{ hero.subheadline }}</p>
+        {%- endif %}
+        <div class="cta-row">
+          {%- if business.phone_href %}
+          <a class="btn btn--primary btn--lg" href="{{ business.phone_href }}">{{ hero.primary_cta_label }}</a>
+          {%- elif business.email %}
+          <a class="btn btn--primary btn--lg" href="mailto:{{ business.email }}">{{ hero.primary_cta_label }}</a>
+          {%- endif %}
+          {%- if hero.secondary_cta_label and contact_anchor %}
+          <a class="btn btn--ghost btn--lg" href="#{{ contact_anchor }}">{{ hero.secondary_cta_label }}</a>
+          {%- endif %}
+        </div>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        {%- if hero_image %}
+        <img src="{{ hero_image }}" alt="" width="720" height="540" loading="eager">
+        {%- else %}
+        <div class="hero__pattern"><span>{{ monogram }}</span></div>
+        {%- endif %}
+      </div>
+    </div>
+  </section>
+
+  {%- if info_strip %}
+  <section class="strip" aria-label="Practice information">
+    <div class="shell strip__inner">
+      {%- for item in info_strip %}
+      <div class="strip__item">
+        <span class="strip__label">{{ item.label }}</span>
+        {%- if item.href %}
+        <a class="strip__value" href="{{ item.href }}">{{ item.value }}</a>
+        {%- else %}
+        <span class="strip__value">{{ item.value }}</span>
+        {%- endif %}
+      </div>
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if services %}
+  <section class="section" id="services">
+    <div class="shell">
+      <div class="section__head">
+        <h2>{{ services_heading }}</h2>
+      </div>
+      <ul class="cards">
+        {%- for service in services %}
+        <li class="card">
+          <h3>{{ service.name }}</h3>
+          {%- if service.description %}
+          <p>{{ service.description }}</p>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if intro.body %}
+  <section class="section section--split" id="practice">
+    <div class="shell split">
+      <div class="split__copy">
+        <h2>{{ intro.heading }}</h2>
+        {%- for paragraph in intro.paragraphs %}
+        <p>{{ paragraph }}</p>
+        {%- endfor %}
+      </div>
+      {%- if secondary_image %}
+      <div class="split__media">
+        <img src="{{ secondary_image }}" alt="" width="640" height="480" loading="lazy">
+      </div>
+      {%- elif credentials %}
+      <div class="split__media split__media--facts">
+        <p class="split__facts-label">Credentials on file</p>
+        <ul class="chips">
+          {%- for credential in credentials %}
+          <li>{{ credential }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endif %}
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if team %}
+  <section class="section" id="team">
+    <div class="shell">
+      <div class="section__head">
+        <h2>{{ team_heading }}</h2>
+      </div>
+      <ul class="people">
+        {%- for person in team %}
+        <li class="person">
+          <p class="person__name">{{ person.name }}{% if person.credentials %}<span class="person__cred">, {{ person.credentials }}</span>{% endif %}</p>
+          {%- if person.role %}
+          <p class="person__role">{{ person.role }}</p>
+          {%- endif %}
+          {%- if person.bio %}
+          <p class="person__bio">{{ person.bio }}</p>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if why_points %}
+  <section class="section section--muted" id="why">
+    <div class="shell">
+      <div class="section__head">
+        <h2>Why patients choose us</h2>
+      </div>
+      <ul class="points">
+        {%- for point in why_points %}
+        <li>{{ point }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </section>
+  {%- endif %}
+
+  <section class="cta-band" id="contact">
+    <div class="shell cta-band__inner">
+      <div>
+        <h2>{{ cta.heading }}</h2>
+        {%- if cta.body %}
+        <p>{{ cta.body }}</p>
+        {%- endif %}
+      </div>
+      <div class="cta-row">
+        {%- if business.phone_href %}
+        <a class="btn btn--primary btn--lg" href="{{ business.phone_href }}">Call {{ business.phone_display }}</a>
+        {%- endif %}
+        {%- if business.email %}
+        <a class="btn btn--ghost btn--lg" href="mailto:{{ business.email }}">Email us</a>
+        {%- endif %}
+      </div>
+    </div>
+  </section>
+
+  {%- if business.address_lines or hours %}
+  <section class="section" id="visit">
+    <div class="shell visit">
+      {%- if business.address_lines %}
+      <div class="visit__block">
+        <h2>Visit the practice</h2>
+        <address>
+          {%- for line in business.address_lines %}
+          {{ line }}{% if not loop.last %}<br>{% endif %}
+          {%- endfor %}
+        </address>
+        {%- if business.phone_href %}
+        <p><a class="link" href="{{ business.phone_href }}">{{ business.phone_display }}</a></p>
+        {%- endif %}
+      </div>
+      {%- endif %}
+      {%- if hours %}
+      <div class="visit__block">
+        <h2>Office hours</h2>
+        <dl class="hours">
+          {%- for row in hours %}
+          <div class="hours__row">
+            <dt>{{ row.days }}</dt>
+            <dd>{{ row.hours }}</dd>
+          </div>
+          {%- endfor %}
+        </dl>
+      </div>
+      {%- endif %}
+    </div>
+  </section>
+  {%- endif %}
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <div>
+      <p class="footer__name">{{ business.name }}</p>
+      {%- if business.address_lines %}
+      <p class="footer__meta">{{ business.address_lines | join(' · ') }}</p>
+      {%- endif %}
+    </div>
+    <div class="footer__contact">
+      {%- if business.phone_href %}
+      <p><a href="{{ business.phone_href }}">{{ business.phone_display }}</a></p>
+      {%- endif %}
+      {%- if business.email %}
+      <p><a href="mailto:{{ business.email }}">{{ business.email }}</a></p>
+      {%- endif %}
+    </div>
+  </div>
+  <div class="shell footer-note">
+    <p>Private design preview prepared by {{ agency_name }}. Not published or indexed.</p>
+  </div>
+</footer>
+
+{%- if business.phone_href %}
+<div class="call-bar">
+  <a class="btn btn--primary btn--block" href="{{ business.phone_href }}">
+    <span aria-hidden="true" class="btn__icon">&#9742;</span> Call {{ business.phone_display }}
+  </a>
+</div>
+{%- endif %}
+
+<script src="script.js" defer></script>
+{%- if schema_json %}
+<script type="application/ld+json">{{ schema_json }}</script>
+{%- endif %}
+</body>
+</html>

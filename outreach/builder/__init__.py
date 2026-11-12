@@ -1,0 +1,1 @@
+"""Template-driven redesign generation."""
